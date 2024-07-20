@@ -21,6 +21,7 @@ jobs:
       with:
         node-version: '18.x'
         cache: 'npm'
+      working-directory: ./github-cics-sdv-approval-bot
     - run: npm ci
       working-directory: ./github-cics-sdv-approval-bot
     - run: npm test
