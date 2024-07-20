@@ -8,7 +8,8 @@
     "lint": "git config --global --add safe.directory /workspace/git-workspace; commitlint -V --from=HEAD~1 && eslint .",
     "pretest": "npm run clean && npm run lint",
     "test": "jest --coverage",
-    "pre-commit": "npm run lint"
+    "pre-commit": "npm run lint",
+    "unit-test": "jest --coverage"
   },
   "devDependencies": {
     "eslint": "8.55.0",
