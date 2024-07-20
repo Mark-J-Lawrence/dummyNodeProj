@@ -11,8 +11,10 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'github-cics-sdv-approval-bot'
 
     steps:
     - uses: actions/checkout@v4
@@ -21,8 +23,5 @@ jobs:
       with:
         node-version: '18.x'
         cache: 'npm'
-      working-directory: ./github-cics-sdv-approval-bot
     - run: npm ci
-      working-directory: ./github-cics-sdv-approval-bot
     - run: npm test
-      working-directory: ./github-cics-sdv-approval-bot
