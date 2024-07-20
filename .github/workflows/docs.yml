@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  Deploy:
+  build:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -24,8 +24,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-          fetch-depth: 0
 
     - name: Use Node.js 18.x
       uses: actions/setup-node@v3
@@ -53,7 +51,19 @@ jobs:
       with:
         path: ./out
 
-    - name: Publish to GitHub Pages
-      if: ${{ github.ref == 'refs/heads/main' }}
-      id: deployment
-      uses: actions/deploy-pages@v4
+  deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'docs'
+    needs: build
+
+    steps:
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
