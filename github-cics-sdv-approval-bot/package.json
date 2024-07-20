@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./coverage",
+    "eslint": "eslint .",
     "lint": "git config --global --add safe.directory /workspace/git-workspace; commitlint -V --from=HEAD~1 && eslint .",
     "pretest": "npm run clean && npm run lint",
     "test": "jest --coverage",
