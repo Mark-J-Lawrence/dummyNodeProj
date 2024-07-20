@@ -1,0 +1,43 @@
+name: Documentation CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'docs'
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+          fetch-depth: 0
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+    - name: Installing dependencies
+      run: npm ci
+    - name: Linting the docs code
+      run: npm run lint
+    - name: Building docs
+      run: npm run build
+    - name: Deploy
+      if: github.ref == 'refs/heads/main'
+      run: |
+        git config --global user.name $user_name
+        git config --global user.email $user_email
+        git remote set-url origin https://${github_token}@github.com/${repository}
+        npm run deploy
+      env:
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        github_token: ${{ secrets.ACTIONS_GH_PAGES_DEPLOY_TOKEN }}
+        repository: ${{ github.repository }}

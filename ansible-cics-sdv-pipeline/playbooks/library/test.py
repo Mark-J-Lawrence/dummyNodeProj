@@ -9,7 +9,7 @@ def test(test):
 
 
 def main():
-    '''The entry point for the module'''
+    '''The entry point for the module'''  
     test('blah')
 
 
