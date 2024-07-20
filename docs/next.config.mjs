@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/DummyNodeProj",
+  basePath: "/dummyNodeProj",
   reactStrictMode: true,
 };
 
