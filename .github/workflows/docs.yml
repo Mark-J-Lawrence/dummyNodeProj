@@ -23,8 +23,8 @@ jobs:
         cache-dependency-path: '**/package-lock.json'
     - name: Installing dependencies
       run: npm ci
-    # - name: Linting the application code
-    #   run: npm run eslint
+    - name: Linting the docs code
+      run: npm run lint
     - name: Building docs
       run: npm run build
     - name: Deploy
