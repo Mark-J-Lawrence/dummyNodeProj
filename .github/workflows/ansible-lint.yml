@@ -1,0 +1,19 @@
+name: Ansible-lint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  Ansible-lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'ansible-cics-sdv-pipeline'
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run ansible-lint
+        uses: ansible/ansible-lint@main
