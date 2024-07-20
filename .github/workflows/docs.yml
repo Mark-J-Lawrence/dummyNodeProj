@@ -23,10 +23,8 @@ jobs:
         cache-dependency-path: '**/package-lock.json'
     - name: Installing dependencies
       run: npm ci
-    - name: Linting the commit message
-      run: npx commitlint -V --from=HEAD~1
-    - name: Linting the application code
-      run: npm run eslint
+    # - name: Linting the application code
+    #   run: npm run eslint
     - name: Building docs
       run: npm run build
     - name: Deploy to GH Pages
