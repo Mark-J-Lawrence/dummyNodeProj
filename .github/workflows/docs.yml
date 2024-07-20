@@ -3,6 +3,8 @@ name: Documentation CI/CD
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   Deploy:
@@ -28,6 +30,7 @@ jobs:
     - name: Building docs
       run: npm run build
     - name: Deploy
+      if: github.ref == 'refs/heads/main'
       run: |
         git config --global user.name $user_name
         git config --global user.email $user_email
