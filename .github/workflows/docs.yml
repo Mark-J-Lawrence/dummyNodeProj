@@ -27,11 +27,11 @@ jobs:
     #   run: npm run eslint
     - name: Building docs
       run: npm run build
-    - name: Deploy to GH Pages
+    - name: Deploy
       run: |
-        git config --global user.name github-actions
-        git config --global user.email github-actions@github.com
-        git remote set-url origin https://github.com/Mark-J-Lawrence/dummyNodeProj
+        git config --global user.name $user_name
+        git config --global user.email $user_email
+        git remote set-url origin https://${github_token}@github.com/${repository}
         npm run deploy
       env:
         user_name: 'github-actions[bot]'
