@@ -1,0 +1,44 @@
+{
+  "name": "approval-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf ./coverage",
+    "lint": "git config --global --add safe.directory /workspace/git-workspace; commitlint -V --from=HEAD~1 && eslint .",
+    "pretest": "npm run clean && npm run lint",
+    "test": "jest --coverage",
+    "pre-commit": "npm run lint"
+  },
+  "devDependencies": {
+    "eslint": "8.55.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-jest": "27.6.0",
+    "jest": "29.7.0",
+    "@commitlint/cli": "18.4.3",
+    "@commitlint/config-conventional": "18.4.3",
+    "husky": "8.0.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "lib/**/*.js",
+      "!**/node_modules/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 83,
+        "functions": 98,
+        "lines": 89
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
+  }
+}
