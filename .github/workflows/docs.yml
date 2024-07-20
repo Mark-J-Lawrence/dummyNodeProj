@@ -1,0 +1,42 @@
+name: Documentation CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'docs'
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+          fetch-depth: 0
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+    - name: Installing dependencies
+      run: npm ci
+    - name: Linting the commit message
+      run: npx commitlint -V --from=HEAD~1
+    - name: Linting the application code
+      run: npm run eslint
+    - name: Building docs
+      run: npm run build
+    - name: Deploy to GH Pages
+      run: |
+        git config --global user.name github-actions
+        git config --global user.email github-actions@github.com
+        git remote set-url origin https://Mark-J-Lawrence@github.com/DummyNodeProj
+        npm run deploy
+      env:
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        github_token: ${{ secrets.ACTIONS_GH_PAGES_DEPLOY_TOKEN }}
+        repository: ${{ github.repository }}
