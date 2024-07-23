@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/dummyNodeProj",
+  basePath: (process.env.NODE_ENV === "production" ? "/dummyNodeProj" : undefined),
   reactStrictMode: true,
 };
 
