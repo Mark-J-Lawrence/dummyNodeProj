@@ -28,7 +28,7 @@ jobs:
       matrix:
         include:
           - language: javascript-typescript
-            build-mode: security-extended
+            build-mode: none
           - language: python
             build-mode: security-extended
 
