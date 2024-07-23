@@ -9,7 +9,7 @@
     "postinstall:staging": "",
     "postinstall:production": "",
     "clean": "rm -rf ./coverage",
-    "eslint": "eslint .",
+    "eslint": "eslint ./lib",
     "lint": "git config --global --add safe.directory /workspace/git-workspace; commitlint -V --from=HEAD~1 && eslint ./lib && ansible-lint ./ansible-cics-sdv-pipeline && flake8 ./ansible-cics-sdv-pipeline && pylint ./ansible-cics-sdv-pipeline --fail-under 5 --fail-on W",
     "pretest": "npm run clean && npm run lint",
     "test": "jest --coverage",
