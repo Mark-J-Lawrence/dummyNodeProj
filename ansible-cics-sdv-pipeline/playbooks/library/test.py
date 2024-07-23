@@ -1,8 +1,12 @@
 #!/usr/bin/python
+'''
+fdfsf
+'''
 
 
-def test(test):
-    return test
+def test(horrible):
+    'awful stuff'
+    return horrible
 
 
 def main():
