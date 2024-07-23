@@ -1,7 +1,5 @@
 #!/usr/bin/python
-'''
-stuff
-'''
+
 
 
 def test(test):
@@ -9,7 +7,7 @@ def test(test):
 
 
 def main():
-    '''The entry point for the module'''  
+    '''The entry point for the module'''   
     test('blah')
 
 
