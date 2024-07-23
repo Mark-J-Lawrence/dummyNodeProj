@@ -1,8 +1,8 @@
 - name: Test
   hosts: localhost
   gather_facts: false
-     
+
   tasks:
-    - name: Dummy 
+    - name: Dummy
       ansible.builtin.debug:
         msg: output stuff
