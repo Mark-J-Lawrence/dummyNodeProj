@@ -2,32 +2,29 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   Test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: 'github-cics-sdv-approval-bot'
 
     steps:
-    - uses: actions/checkout@v4
-      with:
+      - uses: actions/checkout@v4
+        with:
           fetch-depth: 0
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.x'
-        cache: 'npm'
-        cache-dependency-path: '**/package-lock.json'
-    - name: Installing dependencies
-      run: npm ci
-    - name: Linting the commit message
-      run: npx commitlint -V --from=HEAD~1
-    - name: Linting the application code
-      run: npm run eslint
-    - name: Running unit tests
-      run: npm run unit-test
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+      - name: Installing dependencies
+        run: npm ci
+      - name: Linting the commit message
+        run: npx commitlint -V --from=HEAD~1
+      - name: Linting the application code
+        run: npm run eslint
+      - name: Running unit tests
+        run: npm run unit-test
