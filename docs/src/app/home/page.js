@@ -112,7 +112,7 @@ export default function LandingPage() {
               <Grid className="tabs-group-content">
                 <Column md={4} lg={8} sm={4} className="landing-page__tab-content">
                     <center>
-                        <iframe width="756px" height="425px%" src="https://www.youtube.com/embed/bmS5nFIeGWs?si=W4PuiAX1CJa6nO0K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <iframe width="756px" height="425px%" src="https://www.youtube.com/embed/bmS5nFIeGWs?si=W4PuiAX1CJa6nO0K" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <div><br /></div>
                         <Button>How...</Button>
                     </center>
