@@ -22,18 +22,18 @@ const SdvHeader = () => (
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
       <Header aria-label="Security Definition Validation">
         <SkipToContent />
-        <HeaderMenuButton
+        {/* <HeaderMenuButton
           aria-label="Open menu"
           onClick={onClickSideNavExpand}
           isActive={isSideNavExpanded}
-        />
+        /> */}
         <Link href="/" passHref legacyBehavior>
-          <HeaderName prefix="IBM CICS">
-            Security Definition Validation
+          <HeaderName prefix="IBM">
+            CICS TS
           </HeaderName>
         </Link>
         
-        <HeaderNavigation aria-label="Security Definition Validation">
+        {/* <HeaderNavigation aria-label="Security Definition Validation">
           <Link href="/problem" passHref legacyBehavior>
             <HeaderMenuItem>Problem</HeaderMenuItem>
           </Link>
@@ -46,8 +46,8 @@ const SdvHeader = () => (
           <Link href="/how" passHref legacyBehavior>
             <HeaderMenuItem href="/how">How</HeaderMenuItem>
           </Link>
-        </HeaderNavigation>
-        <SideNav
+        </HeaderNavigation> */}
+        {/* <SideNav
           aria-label="Side navigation"
           expanded={isSideNavExpanded}
           isPersistent={false}
@@ -68,8 +68,8 @@ const SdvHeader = () => (
               </Link>
             </HeaderSideNavItems>
           </SideNavItems>
-        </SideNav>
-        <HeaderGlobalBar>
+        </SideNav> */}
+        {/* <HeaderGlobalBar>
           <HeaderGlobalAction
             aria-label="Notifications"
             tooltipAlignment="center"
@@ -87,7 +87,7 @@ const SdvHeader = () => (
           <HeaderGlobalAction aria-label="App Switcher" tooltipAlignment="end">
             <Switcher size={20} />
           </HeaderGlobalAction>
-        </HeaderGlobalBar>
+        </HeaderGlobalBar> */}
       </Header>
     )}
   />
