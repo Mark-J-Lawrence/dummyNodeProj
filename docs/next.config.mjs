@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   output: "export",
-  basePath: (process.env.NODE_ENV === "development" ? undefined : "/dummyNodeProj"),
+  basePath: isProd ? "/dummyNodeProj" : '',
   reactStrictMode: true,
   images: { unoptimized: true }
 };

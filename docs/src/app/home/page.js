@@ -27,6 +27,8 @@ import Link from 'next/link';
 
 import { InfoSection, InfoCard } from '../components/Info/Info';
 
+import tabilloPng from './tab-illo.png';
+
 export default function LandingPage() {
   return (
     <Grid className="landing-page" fullWidth>
@@ -62,7 +64,7 @@ export default function LandingPage() {
                 <Column md={4} lg={{ span: 8, offset: 7 }} sm={4}>
                   <Image
                     className="landing-page__illo"
-                    src="/tab-illo.png"
+                    src={tabilloPng}
                     alt="Carbon illustration"
                     width={604}
                     height={498}
@@ -81,7 +83,7 @@ export default function LandingPage() {
                 <Column md={4} lg={{ span: 8, offset: 7 }} sm={4}>
                   <Image
                     className="landing-page__illo"
-                    src="/tab-illo.png"
+                    src={tabilloPng}
                     alt="Carbon illustration"
                     width={604}
                     height={498}
@@ -100,7 +102,7 @@ export default function LandingPage() {
                 <Column md={4} lg={{ span: 8, offset: 7 }} sm={4}>
                     <Image
                       className="landing-page__illo"
-                      src="/tab-illo.png"
+                      src={tabilloPng}
                       alt="Carbon illustration"
                       width={604}
                       height={498}
@@ -120,7 +122,7 @@ export default function LandingPage() {
                 <Column md={4} lg={{ span: 7, offset: 8 }} sm={4}>
                     <Image
                       className="landing-page__illo"
-                      src="/tab-illo.png"
+                      src={tabilloPng}
                       alt="Carbon illustration"
                       width={604}
                       height={498}
