@@ -18,13 +18,13 @@
     "start": "probot run ./lib/app.js"
   },
   "dependencies": {
-    "probot": "13.2.0",
+    "probot": "10.2.0",
     "per-env": "1.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "18.4.3",
     "@commitlint/config-conventional": "18.4.3",
-    "eslint": "8.55.0",
+    "eslint": "8.2.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.29.0",
     "eslint-plugin-jest": "27.6.0",
